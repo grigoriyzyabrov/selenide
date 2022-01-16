@@ -1,0 +1,16 @@
+package pro.rvision.tests;
+
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
+import pro.rvision.pages.RegistrationPage;
+
+public class TestBase {
+    RegistrationPage registrationPage = new RegistrationPage();
+
+    @BeforeAll
+    static void setUp() {
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+//        Configuration.holdBrowserOpen = true;
+    }
+}
