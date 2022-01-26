@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 
-public class FiveHomeworkTest extends TestBase{
+public class FiveHomeworkTest extends TestBase {
 
     Faker faker = new Faker();
 
@@ -20,7 +20,7 @@ public class FiveHomeworkTest extends TestBase{
     String city = "Noida";
 
     @Test
-    void firstTest(){
+    void firstTest() {
 
         registrationPage
                 .openPage()
@@ -34,9 +34,9 @@ public class FiveHomeworkTest extends TestBase{
                 .selectHobbies((List.of("Music", "Sports", "Reading")))
                 .upLoadFile(file)
                 .setAdress(address)
-                .setStateAndCity(state,city)
+                .setStateAndCity(state, city)
                 .submit();
-        registrationPage.checkResultsValue("Student Name", firstName+" "+lastName);
+        registrationPage.checkResultsValue("Student Name", firstName + " " + lastName);
 
     }
 }
