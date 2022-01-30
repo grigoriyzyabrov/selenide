@@ -32,7 +32,7 @@ public class FiveHomeworkTest extends TestBase {
                 .calendarComponent.setDate("30", "July", "2008");
         registrationPage
                 .selectHobbies((List.of("Music", "Sports", "Reading")))
-                .upLoadFile(file)
+//                .upLoadFile(file)
                 .setAdress(address)
                 .setStateAndCity(state, city)
                 .submit();
