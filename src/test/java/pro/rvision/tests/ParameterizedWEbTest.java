@@ -56,29 +56,29 @@ public class ParameterizedWEbTest {
 
     }
 
-    @CsvSource(value = {
-            "Москва", "Санкт-Петербург", "сегодня",
-            "Минск", "Москва", "завтра"
-    })
-    @ParameterizedTest(name = "Тестирование поиска билетов:{0}")
-    void findTicket1(String from, String to, String date) {
+//    @CsvSource(value = {
+//            "Москва", "Санкт-Петербург", "сегодня",
+//            "Минск", "Москва", "завтра"
+//    })
+//    @ParameterizedTest(name = "Тестирование поиска билетов:{0}")
+//    void findTicket1(String from, String to, String date) {
+//
+//        $("#from").setValue(from);
+//        $("#to").setValue(to);
+//        $("#when").click();
+//        $("#when").setValue(date);
+//        $(".Button.SearchForm__submit").click();
+//        $(".LinkBackward__title").shouldHave(Condition.text(from), Condition.text(to));
+//    }
 
-        $("#from").setValue(from);
-        $("#to").setValue(to);
-        $("#when").click();
-        $("#when").setValue(date);
-        $(".Button.SearchForm__submit").click();
-        $(".LinkBackward__title").shouldHave(Condition.text(from), Condition.text(to));
-    }
-
-    @ValueSource(strings = {"Москва", "Санкт-Петербург", "сегодня"})
+    @ValueSource(strings = {"Москва"})
     @ParameterizedTest(name = "Тестирование поиска билетов:{0}")
-    void findTicket2(String from, String to, String date) {
+    void findTicket2(String from) {
         $("#from").setValue(from);
-        $("#to").setValue(to);
+        $("#to").setValue("Санкт-Петербург");
         $("#when").click();
-        $("#when").setValue(date);
+        $("#when").setValue("сегодня");
         $(".Button.SearchForm__submit").click();
-        $(".LinkBackward__title").shouldHave(Condition.text(from), Condition.text(to));
+        $(".LinkBackward__title").shouldHave(Condition.text(from), Condition.text("Санкт-Петербург"));
     }
 }
