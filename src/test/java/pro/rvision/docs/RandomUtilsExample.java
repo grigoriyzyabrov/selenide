@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static pro.rvision.utils.RandomUtils.*;
 
 public class RandomUtilsExample {
-    @Test
     void ramdom() {
         System.out.println(getRandomString(10));
 
